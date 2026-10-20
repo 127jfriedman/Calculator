@@ -1,0 +1,66 @@
+function equals() {
+document.getElementById("textbox2").value = eval(document.getElementById("textbox1").value);
+}
+function input0() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "0";
+}
+function input1() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "1";
+}
+function input2() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "2";
+}
+function input3() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "3";
+}
+function input4() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "4";
+}
+function input5() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "5";
+}
+function input6() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "6";
+}
+function input7() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "7";
+}
+function input8() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "8";
+}
+function input9() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "9";
+}
+function inputplus() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "+";
+}
+function inputminus() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "-";
+}
+function inputmult() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "*";
+}
+function inputdivide() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "/";
+}
+function inputsquare() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "**";
+}
+function inputdecimal() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + ".";
+}
+function inputmod() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "%";
+}
+function inputopen() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + "(";
+}
+function inputclose() {
+    document.getElementById("textbox1").value = document.getElementById("textbox1").value + ")";
+}
+function historyup() {
+
+}
+function historydown() {
+
+}

@@ -6,10 +6,14 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     width: 10%;
-    height: 10%;
 }
-.top {
+#textbox1 {
     border: 1px solid black;
+    width: 94%;
+}
+#textbox2 {
+    border: 1px solid black;
+    width: 94%;
 }
 #buttons {
     display: grid;
