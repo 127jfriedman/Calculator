@@ -1,5 +1,5 @@
 let equations;
-let currentIndex = 0;
+let currentIndex;
 function ss() {
     const stored = sessionStorage.getItem("textbox1");
     if (stored) {
@@ -10,17 +10,11 @@ function ss() {
         sessionStorage.setItem("textbox1",JSON.stringify(equations));
     }
 }
-function keyPressed() {
-    /*if enter is pressed, run equals()*/
-}
 function equals() {
     document.getElementById("textbox2").value = eval(document.getElementById("textbox1").value);
     equations.push(document.getElementById("textbox1").value);
     sessionStorage.setItem("textbox1",JSON.stringify(equations));
-    if (!(currentIndex === 0)) {
-        currentIndex === currentIndex + 1;
-    }
-    /*No loops in history buttons, make current index track each equals correctly*/
+    currentIndex = equations.length - 1;
 }
 function input0() {
     document.getElementById("textbox1").value = document.getElementById("textbox1").value + "0";
@@ -80,38 +74,38 @@ function inputclose() {
     document.getElementById("textbox1").value = document.getElementById("textbox1").value + ")";
 }
 function historyup() {
-    /*If not same, index is the most recent expression*/
-    /*Find what equation is currently typed*/
-    /*Change index depending on arrow*/
-    /*Change text in box*/
     if (!(document.getElementById("textbox1").value === equations[currentIndex])) {
         currentIndex = equations.length - 1;
     }
-    for (let index = 0; index < currentIndex; index++) {
-        if (document.getElementById("textbox1").value === equations[index]) {
-            currentIndex = index;
-        }
+    if (equations.length === 0) {
+        document.getElementById("textbox1").value = "";
+        document.getElementById("textbox2").value = "";
     }
-    if (currentIndex === 0) {
+    else if (currentIndex === 0) {
         document.getElementById("textbox1").value = equations[currentIndex];
+        document.getElementById("textbox2").value = "";
+    }
+    else if (currentIndex === equations.length - 1 && !(document.getElementById("textbox1").value === equations[currentIndex])) {
+        document.getElementById("textbox1").value = equations[currentIndex];
+        document.getElementById("textbox2").value = "";
     }
     else {
         document.getElementById("textbox1").value = equations[currentIndex - 1];
+        currentIndex = currentIndex - 1;
+        document.getElementById("textbox2").value = "";
     }
 }
 function historydown() {
     if (!(document.getElementById("textbox1").value === equations[currentIndex])) {
         currentIndex = equations.length - 1;
     }
-    for (let index = 0; index < currentIndex; index++) {
-        if (document.getElementById("textbox1").value === equations[index]) {
-            currentIndex = index;
-        }
-    }
     if (currentIndex === equations.length - 1) {
         document.getElementById("textbox1").value = "";
+        document.getElementById("textbox2").value = "";
     }
     else {
         document.getElementById("textbox1").value = equations[currentIndex + 1];
+        currentIndex = currentIndex + 1;
+        document.getElementById("textbox2").value = "";
     }
 }
